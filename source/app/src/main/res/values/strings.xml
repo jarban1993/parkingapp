@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Where Did I Park Last Night?</string>
+    <string name="spacenum">Parking Space</string>
+    <string name="floornum">Garage Floor</string>
+    <string name="parkbutton">PARK</string>
+    <string name="park_button">PARK</string>
+    <string name="enter_minutes">Minutes!</string>
+    <string name="timer">00:00:00</string>
+    <string name="title_activity_navigation_page">Map</string>
+</resources>
