@@ -15,7 +15,6 @@
         android:id="@+id/spacenum"
         android:hint="Parking Space"
         android:inputType="text"
-        android:layout_marginTop="84dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -35,10 +34,10 @@
         android:text="@string/park_button"
         android:id="@+id/park_button"
         android:background="@drawable/round_button"
-        android:width="175dp"
-        android:height="175dp"
+        android:width="140dp"
+        android:height="140dp"
         android:textColor="#ffffff"
-        android:textSize="50sp"
+        android:textSize="45sp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
@@ -52,5 +51,60 @@
         android:width="150dp"
         android:layout_below="@+id/floornum"
         android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/address"
+        android:gravity="center"
+        android:hint="Address"
+        android:layout_below="@+id/edit_meter"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Last Address"
+        android:id="@+id/saveaddress"
+        android:background="#ff0501"
+        android:textColor="#ffffff"
+        android:layout_above="@+id/park_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/rate"
+        android:hint="Rate per Hour"
+        android:gravity="center"
+        android:layout_below="@+id/address"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/rateview"
+        android:text="$"
+        android:layout_above="@+id/calc_button"
+        android:layout_toRightOf="@+id/edit_meter"
+        android:layout_toEndOf="@+id/edit_meter" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate Rate"
+        android:id="@+id/calc_button"
+        android:layout_alignTop="@+id/saveaddress"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#ff0000"
+        android:textColor="#ffffff" />
 
 </RelativeLayout>

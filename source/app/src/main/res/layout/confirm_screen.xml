@@ -15,22 +15,17 @@
         android:layout_height="wrap_content"
         android:text="Parking Space"
         android:textSize="20sp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="35dp"
-        android:layout_marginStart="35dp" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/ParkingFloorText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Garage Floor"
-        android:layout_marginTop="89dp"
         android:textSize="20sp"
         android:layout_below="@+id/ParkingSpaceText"
-        android:layout_alignLeft="@+id/ParkingSpaceText"
-        android:layout_alignStart="@+id/ParkingSpaceText" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/ParkingMeterText"
@@ -38,9 +33,17 @@
         android:layout_height="wrap_content"
         android:text="Meter"
         android:textSize="20sp"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/ParkingFloorText"
-        android:layout_alignStart="@+id/ParkingFloorText" />
+        android:layout_below="@+id/ParkingFloorText"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/ParkingAddressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:textSize="20sp"
+        android:layout_below="@+id/ParkingMeterText"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"

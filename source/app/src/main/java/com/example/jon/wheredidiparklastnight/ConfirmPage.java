@@ -1,3 +1,13 @@
+// Name: Jonathan Arban
+// Course: CSC 415
+// Semester: Spring 2016
+// Instructor: Dr. Pulimood
+// Project name: Where Did I Park Last Night?
+// Description: Saves data on parking space number, garage floor, and timed meter
+// Filename: ConfirmPage.java
+// Description: Establishes the data that is entered at the confirm screen
+// Last modified on: 5/6/16
+
 package com.example.jon.wheredidiparklastnight;
 
 import java.util.concurrent.TimeUnit;
@@ -38,45 +48,45 @@ public class ConfirmPage extends AppCompatActivity {
         navigate = (Button) findViewById(R.id.Navbutton);
 
         String space = getIntent().getStringExtra("ParkingSpace");
-        String floor = getIntent().getStringExtra("ParkingFloor");
+        String floor = getIntent().getStringExtra("ParkingFloor");                     //Getting the variables from the Home Screen
         String meter = getIntent().getStringExtra("ParkingMeter");
-        String[] initial_loaction = getIntent().getStringArrayExtra("InitialLocation");
+        String address = getIntent().getStringExtra("ParkingAddress");
 
 
 
-        final TextView parkingspace = (TextView)findViewById(R.id.ParkingSpaceText);
+        final TextView parkingspace = (TextView)findViewById(R.id.ParkingSpaceText);        //Displaying the parking space number
         parkingspace.setText("Parking Space: " + space);
 
-        final TextView parkingfloor = (TextView)findViewById(R.id.ParkingFloorText);
+        final TextView parkingfloor = (TextView)findViewById(R.id.ParkingFloorText);        //Displaying the garage floor number
         parkingfloor.setText("Floor Number: " + floor);
 
-        parkingmeter = (TextView)findViewById(R.id.ParkingMeterText);
+        parkingmeter = (TextView)findViewById(R.id.ParkingMeterText);                       //Displaying the countdown timer
         final int noOfMinutes = Integer.parseInt(meter) * 60 * 1000; //converts minutes to milliseconds
         startTimer(noOfMinutes);
 
+        final TextView parkingaddress = (TextView)findViewById(R.id.ParkingAddressText);
+        parkingaddress.setText("Address: " + address);
 
+
+        //What happens when you click the Navigate button
         navigate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 Intent intent2 = new Intent(getApplicationContext(), NavigationPage.class);
                 String spaceval = parkingspace.getText().toString();
-                String floorval = parkingfloor.getText().toString();
+                String floorval = parkingfloor.getText().toString();    //making text toString method
                 String meterval = parkingmeter.getText().toString();
                 intent2.putExtra("ParkingSpaceNav", spaceval);
-                intent2.putExtra("ParkingFloorNav", floorval);
+                intent2.putExtra("ParkingFloorNav", floorval);          //passing variables to the next activity
                 intent2.putExtra("ParkingMeterNav", meterval);
                 intent2.putExtra("Milliseconds", millis);
-                startActivity(intent2);
+                stopCountdown();
+                startActivity(intent2);                                 //Start the Navigation Screen
             }
         });
-
-
-
-
-
-
     }
 
+        //initiate timer for Meter
     private void startTimer(int noOfMinutes) {
         countDownTimer = new CountDownTimer(noOfMinutes, 1000) {
             public void onTick(long millisUntilFinished) {
@@ -86,12 +96,9 @@ public class ConfirmPage extends AppCompatActivity {
                 parkingmeter.setText("Time Remaining: " + hms);//set text
 
             }
-
             public void onFinish() {
                 countDownTimer = null;
             }
-
-
         }.start();
 
     }
@@ -104,7 +111,7 @@ public class ConfirmPage extends AppCompatActivity {
     }
 
     public void onBackPressed(){
-        stopCountdown();
+        stopCountdown(); //cancels the timer
         super.onBackPressed();
     }
 }
