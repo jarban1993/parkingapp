@@ -1,2 +1,2 @@
 # parkingapp
-Application that is used to track where you parked and then will navigate you back to your car
+Application that is used to store a parking spot's credentials and then navigate the user back to that spot.
